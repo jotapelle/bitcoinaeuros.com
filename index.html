@@ -1,0 +1,140 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bitcoin a euros - Convertir BTC a EUR - Precio bitcoin</title>
+    <meta name="description" content="Convertir bitcoin a euros en tiempo real. Consulta qué es bitcoin y visualiza su precio al momento.">
+    <meta name="keywords" content="bitcoin,btc,bitcoin a euros,precio bitcoin,bitcoin eur,bitcoin valor,btc eur">
+    <meta name="author" content="Jotapelle">
+    <meta name="copyright" content="Jotapelle" />
+    <meta name="application-name" content="Bitcoin a euros" />
+    <meta name="google-site-verification" content="n91MkmIMxUBjcbabKOJCVGB-zhJrbdu9XAS9q847vmg" />
+    <meta property="og:title" content="Bitcoin a euros - Convertir BTC a EUR - Precio bitcoin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://bitcoinaeuros.com/favicon.png" />
+    <meta property="og:url" content="http://bitcoinaeuros.com" />
+    <meta property="og:description" content="Convertir bitcoin a euros en tiempo real. Consulta qué es bitcoin y visualiza su precio al momento." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Bitcoin a euros - Convertir BTC a EUR - Precio bitcoin" />
+    <meta name="twitter:description" content="Convertir bitcoin a euros en tiempo real. Consulta qué es bitcoin y visualiza su precio al momento." />
+    <meta name="twitter:image" content="http://bitcoinaeuros.com/favicon.png" />
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119424439-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119424439-1');
+    </script>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#23272b"
+                    },
+                    "button": {
+                        "background": "#14a7d0"
+                    }
+                },
+                "theme": "classic",
+                "content": {
+                    "message": "Este sitio web utiliza cookies para garantizar una mejor experiencia en su navegación.",
+                    "dismiss": "Entiendo!",
+                    "link": "Leer más"
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <a href="http://bitcoinaeuros.com" class="btn btn-dark btn-lg"><i class="fab fa-btc"></i> <i class="fas fa-arrow-right"></i> <i class="fas fa-euro-sign"></i></a>
+        <h1 class="display-3"><b>Bitcoin</b> a <b>euros</b></h1>
+        <h2 class="display-5">
+            BTC EUR
+        </h2>
+        <p class="lead">
+            <b>Bitcoin</b>, <b>BTC</b> o <b><i class="fab fa-btc"></i></b>, es una moneda digital (<a href="https://es.wikipedia.org/wiki/Criptomoneda" target="_blank">criptomoneda</a>) que sirve para efectuar pagos o intercambios alrededor del mundo.
+        </p><p class="lead">
+            Bitcoin no esta regulada por ningún gobierno ni banco y son los propios usuarios que la gestionan.
+        </p>
+        <h3 class="lead">
+            ¿Quieres convertir <b>bitcoin a euros</b>? ¡Introduce un valor correcto en el campo bitcoin y pulsa convertir!
+        </h3>
+        <p id="valor" class="lead"></p>
+    </div>
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Bitcoin <i class="fab fa-btc"></i> BTC</h4>
+                </div>
+                <div class="card-body">
+                    <input id="bitcoin" type="text" class="form-control" aria-label="Bitcoin">
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Euros <i class="fas fa-euro-sign"></i> EUR</h4>
+                </div>
+                <div class="card-body">
+                    <input id="euro" type="text" class="form-control" aria-label="Euro">
+                </div>
+            </div>
+        </div>
+        <div class="card-deck pt-4 text-center">
+            <div class="card mb-3 box-shadow">
+                <button id="convertir" type="button" class="btn btn-dark btn-lg">Convertir!</button>
+            </div>
+        </div>
+        <div id="alert" class="alert alert-danger alert-dismissible fade show text-center" style="display:none" role="alert">
+        </div>
+        <footer>
+            <div class="row text-center">
+                <div class="col-12 col-md">
+                    <small class="d-block mb-3 text-muted">Powered by <a href="https://www.coindesk.com/price/" target="_blank">CoinDesk</a> - <a href="http://bitcoinaeuros.com">bitcoinaeuros.com</a> &copy; 2018</small>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            var coindeskAPI = "https://api.coindesk.com/v1/bpi/currentprice/EUR.json";
+            $.getJSON(coindeskAPI, function (json) {
+                document.getElementById("valor").innerHTML = "Actualmente <b>1<i class='fab fa-btc'></i> ≈ " + (json.bpi.EUR.rate_float).toFixed(2) + "<i class='fas fa-euro-sign'></i></b>";
+            });
+            $("#convertir").click(function () {
+                document.getElementById('alert').style.display = 'none';
+                if (isNaN(document.getElementById("bitcoin").value)) {
+                    document.getElementById("alert").innerHTML = "Introduce un valor correcto. Ejemplo 0.23 | 1462 | 100.87 ";
+                    document.getElementById('alert').style.display = 'inherit';
+                }
+                else {
+                    $.getJSON(coindeskAPI, function (json) {
+                        var price = json.bpi.EUR.rate_float;
+                        document.getElementById("euro").value = (document.getElementById("bitcoin").value * price).toFixed(2);
+                        //console.log('Price : ', price);
+
+                    });
+                };
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        if (window.location.hostname.indexOf("www") == 0) {
+            window.location = window.location.href.replace("www.", "");
+        }
+    </script>
+</body>
+</html>
